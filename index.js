@@ -59,7 +59,7 @@ const outputData = (jsonData) => {
     tableData.insertAdjacentHTML('beforebegin', `<h1><span>Content from JSON files at</span><code> ${gitHubLocation}</code></h1>`)
     for (const [key, value] of Object.entries(jsonData.en)) {
         let keyState = key.split('.')[0];
-        console.log(keyState);
+        //console.log(keyState);
         if(keyState!==keyHeading){
             tableData.insertAdjacentHTML('beforeend', '<tr><td colspan="3"><h2>'+keyState+'</h2></td></tr>');
             keyHeading = keyState;
