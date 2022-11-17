@@ -48,7 +48,12 @@ function flattenObject(ob, prefix = false, result = null) {
 // https://raw.githubusercontent.com/alphagov/di-authentication-frontend/main/src/locales/
 
 let compareFiles = {};
-let gitHubLocation = prompt('Enter the raw.githubusercontent location of the locales files (include a trailing slash)','https://raw.githubusercontent.com/alphagov/di-ipv-core-front/main/src/locales/');
+let gitHubLocation = prompt('Enter the raw.githubusercontent location of the locales files (include a trailing slash)','https://raw.githubusercontent.com/alphagov/di-ipv-core-front/main/src/locales/').trim();
+
+if(gitHubLocation.slice(-1)!=='/'){
+    gitHubLocation = gitHubLocation+'/';
+}
+
 const languages = Array('en', 'cy');
 const files = Array('translation.json');
 
